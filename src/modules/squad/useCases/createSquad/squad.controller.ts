@@ -10,7 +10,7 @@ export class CreateSquadController {
             const squad = await createSquadService.execute(name_squad);
             return res.json({squad});
         } catch (error) {
-            return res.json({messageError: error.message});
+            return res.json({messageError: error});
         }
     }
 }
