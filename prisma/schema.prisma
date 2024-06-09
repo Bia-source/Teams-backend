@@ -12,3 +12,9 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model tb_squad {
+  id String @id @default(uuid())
+  name_squad String @db.VarChar(50)
+  created_at DateTime @default(now())
+}
