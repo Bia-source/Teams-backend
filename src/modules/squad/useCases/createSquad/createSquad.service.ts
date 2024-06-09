@@ -6,8 +6,7 @@ export class CreateSquadService {
     async execute({ name_squad }: IRequestSquad){
          try {
             const newsquad = await prisma.$executeRaw`CALL procedure_create_squad(${uuidv4()}, ${name_squad});`;
-            console.log(newsquad);
-
+            console.log("newsquad: ",newsquad);
          } catch (error) {
             console.log(error);
          }
