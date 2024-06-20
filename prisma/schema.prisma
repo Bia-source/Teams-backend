@@ -14,7 +14,26 @@ datasource db {
 }
 
 model tb_squad {
-  id String @id @default(uuid())
-  name_squad String @db.VarChar(50)
+  id         String      @id @default(uuid())
+  name_squad String      @db.VarChar(50)
+  created_at DateTime    @default(now())
+  tb_player  tb_player[]
+}
+
+model tb_player {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(50)
+  age        Int
+  position   Position
+  squad_id   String
+  squad      tb_squad @relation(fields: [squad_id], references: [id])
   created_at DateTime @default(now())
+}
+// lamber jeckin
+enum Position {
+  levantador
+  ponteiro
+  oposto
+  central
+  libero
 }

@@ -8,7 +8,7 @@ export class CreateSquadController {
             const { name_squad } = req.body;
             const createSquadService = new CreateSquadService();
             const squad = await createSquadService.execute({name_squad});
-            return res.json({squad});
+            return res.status(201).json({squad});
         } catch (error) {
             return res.json({messageError: error});
         }
