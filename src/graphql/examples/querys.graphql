@@ -1,0 +1,8 @@
+# Consultando todas as equipes
+query Query {
+  getAllSquad {
+    id
+    name_squad
+    created_at
+  }
+}

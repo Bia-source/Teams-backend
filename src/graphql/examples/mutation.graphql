@@ -1,0 +1,26 @@
+# Criando um novo jogador dentro de uma equipe
+mutation Mutation($name: String!, $age: Int!, $position: Position!, $squadId: String!) {
+  createPlayer(name: "Lucy", age: 19, position: "central", squad_id: "2cf4ba67-218b-4d05-a52d-c37c19a35e92") {
+    id
+    name
+    age
+    squad_id
+    created_at
+  }
+}
+
+
+# Criando uma nova equipe
+mutation CreateSquad($nameSquad: String!) {
+  createSquad(name_squad: "winxs") {
+    id
+    name_squad
+    created_at
+    tb_player {
+      name
+      age
+      position
+      squad_id
+    }
+  }
+}
