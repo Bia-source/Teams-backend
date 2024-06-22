@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { CreatePlayerService } from "./createPlayer.service";
 
+
 export class CreatePlayerController {
     async handle(req: Request, res: Response): Promise<Response> {
         try {

@@ -1,6 +1,7 @@
-import { prisma } from "../../../database/prismaClient";
-import { IRequestPlayer } from "../interface/player.interface";
+
 import { v4 as uuidv4 } from "uuid";
+import { prisma } from "../../../../database/prismaClient";
+import { IRequestPlayer } from "../../interface/player.interface";
 
 export class CreatePlayerService {
     async execute({ name, age, position, squad_id }: IRequestPlayer): Promise<any>{

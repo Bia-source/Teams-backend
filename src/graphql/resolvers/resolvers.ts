@@ -1,5 +1,5 @@
 import { IRequestPlayer } from "../../modules/player/interface/player.interface";
-import { CreatePlayerService } from "../../modules/player/useCases/createPlayer.service";
+import { CreatePlayerService } from "../../modules/player/useCases/createPlayer/createPlayer.service";
 import { IRequestSquad } from "../../modules/squad/interface/squad.interfaces";
 import { CreateSquadService } from "../../modules/squad/useCases/createSquad/createSquad.service";
 import { GetSquadService } from "../../modules/squad/useCases/getSquad/getSquad.service";
