@@ -6,7 +6,7 @@ export class CreatePlayerController {
         try {
             const { name, age, position, squad_id } = req.body;
             const createSquadService = new CreatePlayerService();
-            const player = await createSquadService.handle({ name, age, position, squad_id });
+            const player = await createSquadService.execute({ name, age, position, squad_id });
             return res.status(201).json({ player });
         } catch (error) {
             return res.status(400).json({ error });
