@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { CreateSquadService } from "./createSquad.service";
+import { tb_squad } from "@prisma/client";
 
 
 export class CreateSquadController {
@@ -7,10 +8,14 @@ export class CreateSquadController {
         try {
             const { name_squad } = req.body;
             const createSquadService = new CreateSquadService();
-            const squad = await createSquadService.execute({name_squad});
-            return res.status(201).json({squad});
+            const squad = await createSquadService.execute({name_squad}) as tb_squad;
+            if(squad?.id){
+                return res.status(201).json({squad});
+            }else{
+                return res.status(400).json({messageError: squad});
+            }
         } catch (error) {
-            return res.json({messageError: error});
+            return res.status(400).json({messageError: error});
         }
     }
 }
